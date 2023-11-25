@@ -75,7 +75,7 @@ function main() {
 		Logger.info("MAIN", `Server listening on port ${CONFIG.PORT}`);
 	});
 }
-main();
+main()
 // https.createServer(OPTIONS, APP).listen(CONFIG.PORT, () => {
 // 	console.log(`${getTime()} - Server listening on port ${CONFIG.PORT}`)
 // })
