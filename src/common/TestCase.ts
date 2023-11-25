@@ -40,7 +40,6 @@ export default class TestCase {
 		this.task(...args);
 	}
 	public run(...args: any[]) {
-		Logger.info("TEST", `Running test case "${this._name}"`);
 		try {
 			this._run(...args);
 			this._pass();

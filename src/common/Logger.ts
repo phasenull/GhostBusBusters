@@ -37,7 +37,20 @@ function getTime() {
 		.toString()
 		.padStart(4, "0")}`;
 };
-
+function getLogColor(log_type: string) {
+	switch (log_type) {
+		case "LOG":
+			return "\x1b[47m";
+		case "ERROR":
+			return "\x1b[41m";
+		case "WARNING":
+			return "\x1b[43m";
+		case "INFO":
+			return "\x1b[46m";
+		default:
+			return "\x1b[0m";
+	}
+}
 function getPrefix(log_type: string, stack?: string) {
-	return `${getTime()} [${log_type}/${stack || "unknown"}]:`;
+	return `${getTime()} ${getLogColor(log_type)}[${log_type}/${stack || "unknown"}]\x1b[0m`;
 }
